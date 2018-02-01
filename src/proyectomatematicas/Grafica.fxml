@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<TabPane prefHeight="650.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="proyectomatematicas.GraficaController">
+  <tabs>
+    <Tab text="Análisis de la Función">
+         <content>
+            <ScrollPane prefHeight="720.0" prefWidth="1280.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1280.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="75.0" prefWidth="800.0">
+                           <children>
+                              <Label fx:id="tituloLabel" text="Análisis de la Función" textFill="#972103">
+                                 <font>
+                                    <Font size="30.0" />
+                                 </font>
+                              </Label>
+                           </children></HBox>
+                        <AnchorPane layoutY="72.0" prefHeight="587.0" prefWidth="800.0">
+                           <children>
+                              <ChoiceBox id="criterioChoiceBox" fx:id="criterioChoiceBox" layoutX="281.0" layoutY="18.0" prefHeight="25.0" prefWidth="130.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="ax^2+bx+c" />
+                                            <String fx:value="ax^2+bx" />
+                                            <String fx:value="ax^2+c" />
+                                        </FXCollections>
+                                    </items>
+                              </ChoiceBox>
+                              <Label fx:id="tipoFuncionLabel" layoutX="55.0" layoutY="15.0" prefHeight="30.0" text="Seleccione el tipo de Función" wrapText="true">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="55.0" layoutY="54.0" prefHeight="30.0" prefWidth="13.0" text="a:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="aTextField" layoutX="75.0" layoutY="57.0" prefHeight="25.0" prefWidth="65.0" promptText="numérico" />
+                              <Label layoutX="165.0" layoutY="55.0" prefHeight="30.0" text="b:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="bTextField" layoutX="183.0" layoutY="57.0" prefHeight="25.0" prefWidth="65.0" promptText="numérico" />
+                              <Label layoutX="276.0" layoutY="54.0" prefHeight="30.0" text="c:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="cTextField" layoutX="292.0" layoutY="57.0" prefHeight="25.0" prefWidth="65.0" promptText="numérico" />
+                              <VBox alignment="TOP_CENTER" layoutX="28.0" layoutY="89.0" prefHeight="450.0" prefWidth="150.0">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0">
+                                       <children>
+                                          <Label prefHeight="30.0" text="Discriminante:" wrapText="true">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0">
+                                       <children>
+                                          <Label prefHeight="30.0" text="Eje de Simetría:" wrapText="true">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0">
+                                       <children>
+                                          <Label prefHeight="30.0" text="Vértice:">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0">
+                                       <children>
+                                          <Label prefHeight="30.0" text="Dominio:" wrapText="true">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0">
+                                       <children>
+                                          <Label prefHeight="30.0" text="Codominio:" wrapText="true">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0">
+                                       <children>
+                                          <Label text="Creciente:">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0">
+                                       <children>
+                                          <Label text="Decreciente:">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0">
+                                       <children>
+                                          <Label text="Positiva:">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" prefHeight="50.0">
+                                       <children>
+                                          <Label text="Negativa:">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" layoutX="183.0" layoutY="89.0" prefHeight="450.0" prefWidth="150.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="150.0">
+                                       <children>
+                                          <TextField fx:id="discriminanteTextField" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="150.0">
+                                       <children>
+                                          <TextField fx:id="EjeDeSimetriaTextField" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="150.0">
+                                       <children>
+                                          <TextField fx:id="verticeTextField" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="150.0">
+                                       <children>
+                                          <TextField fx:id="dominioTextField" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="150.0">
+                                       <children>
+                                          <TextField fx:id="codominioTextField" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="50.0">
+                                       <children>
+                                          <TextField fx:id="crecienteTextField" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="50.0">
+                                       <children>
+                                          <TextField fx:id="decrecienteTextField" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="50.0">
+                                       <children>
+                                          <TextField fx:id="positivaTextField" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="50.0">
+                                       <children>
+                                          <TextField fx:id="negativaTextField" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" layoutX="356.0" layoutY="82.0" prefHeight="450.0" prefWidth="365.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="365.0">
+                                       <children>
+                                          <Label prefHeight="30.0" text="Rango, Ámbito, Contradominio" wrapText="true">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="365.0">
+                                       <children>
+                                          <TextField fx:id="ambitoTextField" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="365.0">
+                                       <children>
+                                          <Label prefHeight="30.0" text="Intersección con el Eje Y" wrapText="true">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="365.0">
+                                       <children>
+                                          <TextField fx:id="interseccionYTextField" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="50.0" prefWidth="365.0">
+                                       <children>
+                                          <Label prefHeight="30.0" text="Intersecciones con el Eje X" wrapText="true">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="TOP_CENTER" prefHeight="50.0" prefWidth="365.0">
+                                       <children>
+                                          <VBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="91.0">
+                                             <children>
+                                                <Label text="x1=">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="120.0">
+                                             <children>
+                                                <TextField fx:id="x1TextField" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="91.0">
+                                             <children>
+                                                <Label text="x2=">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="120.0">
+                                             <children>
+                                                <TextField fx:id="x2TextField" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <Button fx:id="buttonSolucion" layoutX="473.0" layoutY="4.0" onAction="#Solucionar" prefHeight="45.0" prefWidth="186.0" styleClass="boton" text="Ver Soluciones" textFill="#972103">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+              </content>
+            </ScrollPane>
+         </content>
+    </Tab>
+    <Tab text="Plano Cartesiano">
+      <content>
+        <AnchorPane nodeOrientation="LEFT_TO_RIGHT">
+               <children>
+                <Button fx:id="buttonDibujar" layoutX="581.0" layoutY="20.0" onAction="#Dibujar" prefHeight="45.0" prefWidth="186.0" styleClass="boton" text="Dibujar Función" textFill="#972103">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Button>
+                <Label layoutX="21.0" layoutY="27.0" text="Tamaño de los ejes:">
+                  <font>
+                    <Font name="Comic Sans MS Bold" size="20.0" fx:id="x1" />
+                  </font>
+                </Label>
+                <Label font="$x1" layoutX="75.0" layoutY="64.0" text="Función:" />
+                <LineChart fx:id="graph" layoutX="25.0" layoutY="94.0" prefHeight="503.0" prefWidth="750.0">
+                  <xAxis>
+                    <NumberAxis label="x" tickUnit="1.0" fx:id="x" />
+                  </xAxis>
+                  <yAxis>
+                    <NumberAxis label="f(x)" side="LEFT" tickUnit="1.0" />
+                  </yAxis>
+                </LineChart>
+                <TextField fx:id="rangoFuncionTextField" layoutX="202.0" layoutY="30.0" prefHeight="25.0" prefWidth="37.0" />
+               </children>
+            </AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
